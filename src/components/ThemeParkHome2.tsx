@@ -675,14 +675,14 @@ const ThemeParkHome2 = () => {
             onError={(e) => console.error('video error', e)}
           >
 
-            {/* <source
+            <source
                 src="./elements/r2/map/output.mov"
                 type="video/quicktime"
-              /> */}
-              <source
+              />
+              {/* <source
                 src="./elements/r2/map/output.webm"
                 type="video/webm"
-              />
+              /> */}
             {/* {supportsHEVCAlpha || isIOS ? (
               <source
                 src="./elements/r2/map/output.mov"
