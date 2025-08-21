@@ -5,7 +5,7 @@ import { X } from "lucide-react";
 // import AsusLogin from "./AsusLogin";
 // import { playSound } from "@/utils/sound";
 import { useState, useRef } from "react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 // import useMobile from "@/hooks/useMobile";
 import { createPortal } from "react-dom";
 
@@ -28,7 +28,7 @@ interface TalkDialogProps {
 const TalkDialog: React.FC<TalkDialogProps> = ({
   isOpen,
   onClose,
-  title,
+  // title,
   content,
   videoSrc,
   style,
@@ -44,7 +44,7 @@ const TalkDialog: React.FC<TalkDialogProps> = ({
   // const isIOS = useIsIOS();
   const [isTermsAccepted, setIsTermsAccepted] = useState(false);
   const [isPolicyAccepted, setIsPolicyAccepted] = useState(false);
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   // const { isMobile } = useMobile();
 
   // 使用 useRef 來確保隨機選擇只在首次渲染時執行
@@ -68,10 +68,10 @@ const TalkDialog: React.FC<TalkDialogProps> = ({
       <>
         <div className="text-left text-white/80">
           <h1 className="text-glow my-5 text-xl text-[#00FFFF] border-b border-[#00FFFF] pb-2">
-            {t(title)}
+            asdfdasfasf
           </h1>
           <p className="text-gray-200 hover:text-gray-100">
-            {t(selectedContentRef.current)}
+            asdfsafa
           </p>
 
           {!notOpen && (
@@ -101,11 +101,11 @@ const TalkDialog: React.FC<TalkDialogProps> = ({
     ) : (
       <div className="text- text-white/80">
         <h1 className="text-glow my-3 sm:my-5 text-lg sm:text-xl text-[#00FFFF] border-b border-[#00FFFF] pb-2 font-TTNormsProMedium">
-          {t(title)}
+          sadfasdf
         </h1>
 
         <p className="text-gray-200 hover:text-gray-100 text-sm sm:text-base">
-          {t("r1.map.before_login")}
+          adfsaf
         </p>
         {loginInfo && (
           <>
@@ -124,7 +124,7 @@ const TalkDialog: React.FC<TalkDialogProps> = ({
                   className="text-blue-300 cursor-pointer hover:text-blue-400"
                   href="https://www.asus.com/terms_of_use_notice_privacy_policy/privacy_policy"
                 >
-                  {t("r1.ticket.policy")}
+                  asdfasdf
                 </a>
               </p>
             </div>
@@ -144,7 +144,7 @@ const TalkDialog: React.FC<TalkDialogProps> = ({
                   className="text-blue-300 cursor-pointer hover:text-blue-400"
                   onClick={() => setShowTerms(true)}
                 >
-                  {t("r1.ticket.agree_term")}
+                  asdfasdffdsaf
                 </span>
               </p>
             </div>

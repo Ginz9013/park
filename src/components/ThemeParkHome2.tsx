@@ -39,7 +39,7 @@ import { AnimatePresence, motion } from "motion/react";
 //   DRAW_CARD_POINT_RULE_ID,
 //   FIRST_CABLE_CAR_POINT_RULE_ID,
 // } from "@/types/pointRule";
-import { t } from "i18next";
+// import { t } from "i18next";
 
 // 在組件頂部添加一個常數來定義斷點
 const TABLET_BREAKPOINT = 1280; // 平板尺寸的斷點，可以根據需求調整
@@ -1105,8 +1105,8 @@ const ThemeParkHome2 = () => {
                     // title={pages[2].title || ""}
                     // content={pages[2].subtitle || ""}
                     // title, content 帶入 i18next 的 key 值
-                    title={t("r2.map.omni_card_collection.title")}
-                    content={t("r2.map.omni_card_collection.content")}
+                    title={"r2.map.omni_card_collection.title"}
+                    content={"r2.map.omni_card_collection.content"}
                     videoSrc="./elements/omni/talk/output.webm"
                     style={{
                       top: "55%",
@@ -1187,8 +1187,8 @@ const ThemeParkHome2 = () => {
                     // title={pages[2].title || ""}
                     // content={pages[2].subtitle || ""}
                     // title, content 帶入 i18next 的 key 值
-                    title={t("r2.map.omni_arcade.title")}
-                    content={t("r2.map.omni_arcade.content")}
+                    title={"r2.map.omni_arcade.title"}
+                    content={"r2.map.omni_arcade.content"}
                     videoSrc="./elements/omni/talk/output.webm"
                     style={{
                       top: "55%",
@@ -1262,8 +1262,8 @@ const ThemeParkHome2 = () => {
                     // title={pages[2].title || ""}
                     // content={pages[2].subtitle || ""}
                     // title, content 帶入 i18next 的 key 值
-                    title={t("r2.map.omni_shop.title")}
-                    content={t("r2.map.omni_shop.content")}
+                    title={"r2.map.omni_shop.title"}
+                    content={"r2.map.omni_shop.content"}
                     videoSrc="./elements/omni/talk/output.webm"
                     style={{
                       top: "55%",
@@ -1337,8 +1337,8 @@ const ThemeParkHome2 = () => {
                     // title={pages[2].title || ""}
                     // content={pages[2].subtitle || ""}
                     // title, content 帶入 i18next 的 key 值
-                    title={t("r2.map.omni_dream_craft.title")}
-                    content={t("r2.map.omni_dream_craft.not_open")}
+                    title={"r2.map.omni_dream_craft.title"}
+                    content={"r2.map.omni_dream_craft.not_open"}
                     videoSrc="./elements/omni/talk/output.webm"
                     style={{
                       top: "55%",
@@ -1411,8 +1411,8 @@ const ThemeParkHome2 = () => {
                     // title={pages[2].title || ""}
                     // content={pages[2].subtitle || ""}
                     // title, content 帶入 i18next 的 key 值
-                    title={t("r1.cable.title")}
-                    content={t("r1.map.after_login_cable_Open")}
+                    title={"r1.cable.title"}
+                    content={"r1.map.after_login_cable_Open"}
                     videoSrc="./elements/omni/talk/output.webm"
                     style={{
                       top: "40%",
