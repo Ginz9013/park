@@ -36,47 +36,30 @@ const ThemeParkHome2 = () => {
   const [touchStart, setTouchStart] = useState<{ x: number; y: number } | null>(
     null
   );
-  const [activePage, setActivePage] = useState<
+  const [activePage, _setActivePage] = useState<
     "game" | "shop" | null 
   >(null);
-  const [walk1ZIndex, setWalk1ZIndex] = useState(9);
-  const [isWalk1Visible, setIsWalk1Visible] = useState(true);
+  // const [_, setWalk1ZIndex] = useState(9);
+  // const [_, setIsWalk1Visible] = useState(true);
   const walk1VideoRef = useRef<HTMLVideoElement>(null);
   const wheelVideoRef = useRef<HTMLVideoElement>(null);
 
   // 抽卡機
-  const [zoneDraw, setZoneDraw] = useState<boolean>(false);
-  const [showDrawGetPoint, setShowDrawGetPoint] = useState<boolean>(false);
+
 
   // 藏顯卡
   // const { r2CardPositions } = useCardPosition();
-  const [zoneFindCard, setZoneFindCard] = useState<boolean>(false);
-  const [showFindCardCompleted, setShowFindCardCompleted] = useState<boolean>(false);
 
-  // 遊戲
-  const [zoneGame, setZoneGame] = useState<boolean>(false);
-
-  // 商店
-  const [zoneShop, setZoneShop] = useState<boolean>(false);
-
-  // 藝廊
-  const [zoneCraft, setZoneCraft] = useState<boolean>(false);
-
-  // 纜車
-  const [zoneCableCar, setZoneCableCar] = useState<boolean>(false);
-  // 纜車得分
-  const [showFirstCableCarPointModal, setShowFirstCableCarPointModal] = useState<boolean>(false);
-  const [getPointThisTime, setGetPointThisTime] = useState<boolean>(false);
 
   // const [isOpeningOK, setIsOpeningOK] = useState(false);
-  const [_showTerms, setShowTerms] = useState(false);
+  const [_showTerms] = useState(false);
   // const [showPark, setShowPark] = useState(false);
 
-  const [isPolicyAccepted, setIsPolicyAccepted] = useState(false);
-  const [isTermsAccepted, setIsTermsAccepted] = useState(false);
-  const [isLoginLoading, setIsLoginLoading] = useState(false);
-  const [isVideoDialogOpen, setIsVideoDialogOpen] = useState(false);
-  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  // const [isPolicyAccepted, setIsPolicyAccepted] = useState(false);
+  // const [isTermsAccepted, setIsTermsAccepted] = useState(false);
+  // const [isLoginLoading, setIsLoginLoading] = useState(false);
+  // const [isVideoDialogOpen, setIsVideoDialogOpen] = useState(false);
+  // const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
 
   // park dialog auto open after 10 seconds refresh
@@ -163,51 +146,51 @@ const ThemeParkHome2 = () => {
       });
     }
   };
-  // walk1 影片暫停並隱藏
-  const pauseWalk1Video = () => {
-    if (walk1VideoRef.current) {
-      walk1VideoRef.current.pause();
-    }
-    setIsWalk1Visible(false);
-  };
-  // walk1 影片顯示並繼續
-  const playWalk1Video = () => {
-    if (walk1VideoRef.current) {
-      walk1VideoRef.current.play();
-    }
-    setIsWalk1Visible(true);
-  };
+  // // walk1 影片暫停並隱藏
+  // const pauseWalk1Video = () => {
+  //   if (walk1VideoRef.current) {
+  //     walk1VideoRef.current.pause();
+  //   }
+  //   setIsWalk1Visible(false);
+  // };
+  // // walk1 影片顯示並繼續
+  // const playWalk1Video = () => {
+  //   if (walk1VideoRef.current) {
+  //     walk1VideoRef.current.play();
+  //   }
+  //   setIsWalk1Visible(true);
+  // };
 
   // 處理 walk1 影片播放
-  const handleWalk1VideoTimeUpdate = () => {
-    if (walk1VideoRef.current) {
-      const video = walk1VideoRef.current;
-      const currentTime = video.currentTime;
+  // const handleWalk1VideoTimeUpdate = () => {
+  //   if (walk1VideoRef.current) {
+  //     const video = walk1VideoRef.current;
+  //     const currentTime = video.currentTime;
 
-      // 根據播放秒數設定不同的 z-index
-      if (currentTime > 12 && currentTime < 22) {
-        setWalk1ZIndex(8); // 2-4秒：z-index = 15
-      } else {
-        setWalk1ZIndex(12); // 2-4秒：z-index = 15
-      }
+  //     // 根據播放秒數設定不同的 z-index
+  //     if (currentTime > 12 && currentTime < 22) {
+  //       setWalk1ZIndex(8); // 2-4秒：z-index = 15
+  //     } else {
+  //       setWalk1ZIndex(12); // 2-4秒：z-index = 15
+  //     }
 
-      // 檢查是否接近影片結尾（例如最後 0.1 秒）
-      if (video.duration - currentTime < 0.1) {
-        // 每次播放完成後都跳轉到指定秒數
-        video.currentTime = 17.5;
-      }
-    }
-  };
+  //     // 檢查是否接近影片結尾（例如最後 0.1 秒）
+  //     if (video.duration - currentTime < 0.1) {
+  //       // 每次播放完成後都跳轉到指定秒數
+  //       video.currentTime = 17.5;
+  //     }
+  //   }
+  // };
 
-  const handleWalk1VideoEnded = () => {
-    if (walk1VideoRef.current) {
-      // 每次播放結束後都跳轉到指定秒數並繼續播放
-      walk1VideoRef.current.currentTime = 17.5;
-      walk1VideoRef.current.play().catch((error) => {
-        console.log("Video play failed:", error);
-      });
-    }
-  };
+  // const handleWalk1VideoEnded = () => {
+  //   if (walk1VideoRef.current) {
+  //     // 每次播放結束後都跳轉到指定秒數並繼續播放
+  //     walk1VideoRef.current.currentTime = 17.5;
+  //     walk1VideoRef.current.play().catch((error) => {
+  //       console.log("Video play failed:", error);
+  //     });
+  //   }
+  // };
 
   // 控制影片播放/暫停的函數
   const pauseAllVideos = () => {
